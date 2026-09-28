@@ -622,39 +622,10 @@ function KeySystem.Functions.Start()
         warn("[Zero Point] This game is not supported.")
         return
     end
-    local ProvidedKey = KeySystem.Functions.CleanKey(script_key)
-    if ProvidedKey ~= "" then
-        script_key = ProvidedKey
-        KeySystem.Functions.SaveKey(ProvidedKey)
-        local Loaded, LoadError = KeySystem.Functions.LoadGameScript()
-        if not Loaded then
-            warn("[Zero Point] Failed to load script:", LoadError)
-        end
-        return
+    local Loaded, LoadError = KeySystem.Functions.LoadGameScript()
+    if not Loaded then
+        warn("[Zero Point] Failed to load script:", LoadError)
     end
-    if KeySystem.Functions.IsFreeScript() then
-        local Loaded, LoadError = KeySystem.Functions.LoadGameScript()
-        if not Loaded then
-            warn("[Zero Point] Failed to load script:", LoadError)
-        end
-        return
-    end
-    local SavedKey = KeySystem.Functions.ReadKey()
-    if SavedKey then
-        local Valid, Message = KeySystem.Functions.ValidateKey(SavedKey)
-        if Valid then
-            script_key = SavedKey
-            local Loaded, LoadError = KeySystem.Functions.LoadGameScript()
-            if not Loaded then
-                warn("[Zero Point] Failed to load script:", LoadError)
-            end
-            return
-        end
-        script_key = nil
-        KeySystem.State.SavedKey = SavedKey
-        KeySystem.State.SavedKeyMessage = Message or "Saved key is no longer valid."
-    end
-    KeySystem.Functions.CreateGui()
 end
 KeySystem.Functions.Start()
 
