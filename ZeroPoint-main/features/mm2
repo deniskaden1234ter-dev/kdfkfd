@@ -1,0 +1,209 @@
+TRADERIE / VALUES
+1. Traderie Value Search
+2. Say Value
+
+COINS / BOXES
+3. Collect Coins
+4. Float While Collecting
+5. NoClip While Collecting
+6. Avoid Friends Near Coins
+7. Auto Buy Boxes
+
+TELEPORTS
+8. Teleport MainMap
+9. Teleport Lobby
+10. Teleport Murderer
+11. Teleport Sheriff
+12. Teleport Hero
+13. Teleport Dropped Gun
+14. Teleport Selected Player
+
+SERVER SYSTEM
+15. Hop Server
+16. Rejoin Server
+17. Smallest Server
+18. Best Ping
+19. Random Server
+20. Largest Server
+21. Exclude Full Servers
+22. Avoid Visited Servers
+23. Remove Error Prompts
+24. Retry Failed Teleports
+25. Save Teleport Attempts
+26. Force Join Job ID
+27. Join Place
+28. Copy Current Job ID
+29. Copy Place ID
+30. Copy Current Join Code
+31. Refresh Server List
+32. Join Selected
+33. Clear Server Cache
+34. Clear Visited
+35. Require Friendship
+36. Join Username
+37. Refresh Friends
+38. Join Selected Friend
+
+MURDERER
+39. Kill All
+40. Kill Aura
+
+ESP
+41. ESP Toggle
+42. NameTags
+43. Health
+44. Distance
+45. Roles
+46. ESP Outline
+47. ESP Through Walls
+48. Dropped Gun ESP
+49. Dropped Gun Label
+50. Dropped Gun Distance
+
+SHERIFF / GUN
+51. Shoot Murderer
+52. Pick Up Gun
+53. Pick Up Gun Once
+54. Shoot Murderer Once
+
+ROLES / FRIENDS / SURVIVAL
+55. Role HUD
+56. Role Faces
+57. Ignore Friends
+58. Ignore Friends of Friends
+59. Reset Friend Cache
+60. Announce Murderer
+61. Announce Sheriff
+62. Whisper Friends Only
+63. Auto Survive Rounds
+64. Float While Surviving
+65. NoClip While Surviving
+66. Avoid Murder
+67. Avoid Sheriff / Hero
+
+TRIGGER BOT / FOV
+68. Trigger Bot
+69. Wall Check
+70. Show FOV
+71. FOV Glow
+72. Orbit Ticks
+73. Spin Ticks
+74. Pulse Glow
+75. Rainbow FOV
+76. Filled FOV
+77. Center Dot
+
+CHEATS / COINS / PRESTIGE
+78. Small Hitbox
+79. Coin Hitbox
+80. TP to Coin
+81. Auto Prestige
+
+FLING
+82. Fling Murder
+83. Fling Sheriff
+84. Auto Fling Sheriff
+85. Walk Fling
+86. Only While Moving
+87. Preserve Momentum
+88. Keep Walk Fling On Respawn
+89. Protect Friends From Walk Fling
+90. Fling Player
+91. Stop Current Fling
+
+SILENT AIM
+92. Silent Aim
+93. Bullet Tracers
+
+PLAYER / CHARACTER
+94. AntiAfk
+95. Double Jump
+96. Rainbow Particles
+97. Wall Jump
+98. NoClip
+99. Walk Speed
+100. Jump Modifier
+101. Hip Height
+102. Maximum Slope Angle
+103. Camera Offset
+104. Disable Auto Rotate
+105. Disable Auto Jump
+106. No Sitting
+107. No Platform Stand
+108. No Ragdoll / Falling Down
+109. Keep Body On Death
+110. No Neck Requirement
+111. Anti Fling
+112. Disable Player Collision
+113. Anti Void
+114. Refresh Avatar
+115. View My Avatar
+
+LIGHTING
+116. Enable Lighting Controls
+117. Lock Lighting Settings
+118. Freeze Time
+119. Day / Night Cycle
+120. Fullbright
+121. Global Shadows
+122. Fog
+123. Disable Game Effects
+124. Color Correction
+125. Bloom
+126. Blur
+127. Sun Rays
+128. Depth Of Field
+129. Disable Game Atmosphere
+130. Custom Atmosphere
+131. Custom Sky
+132. Override Game Sky
+133. Show Sun And Moon
+134. Dynamic Clouds
+135. Restore Game Lighting
+136. Reapply Lighting
+
+SOUND SYSTEM
+137. Audio On
+138. Play Audio
+139. Stop Audio
+140. Pause / Resume Audio
+141. Restart Audio
+142. Save Current Song
+143. Delete Selected Song
+144. Load Selected Song
+145. Play Selected Song
+146. Loop Audio
+147. Equalizer
+148. Reverb
+149. Echo
+150. Distortion
+151. Chorus
+152. Pitch Shift
+
+CUSTOM EMOTES
+153. Play Custom Emote
+154. Stop Custom Emote
+155. Pause / Resume Custom Emote
+156. Restart Custom Emote
+157. Auto Play Selection
+158. Loop Emote
+159. Walk While Emoting
+160. Stop Other Animations
+161. Resume Emote After Respawn
+
+IN-GAME EMOTES
+162. Play In-Game Emote
+163. Auto Play In-Game Emote
+
+ANIMATION PACKS
+164. Apply Pack To Target
+165. Apply Full Pack
+166. Enable Custom Animations
+167. Auto Apply Pack Selection
+168. Keep Animations After Respawn
+169. Apply Custom Animation ID
+170. Clear Target Animation
+171. Reload Animations
+172. Restore Default Animations
+
+TOTAL: 172 FEATURES

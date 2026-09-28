@@ -1,0 +1,569 @@
+==================================================
+PET TASK AUTOFARM
+==================================================
+
+GENERAL
+
+Autofarm Control
+- Auto Farm Pet Tasks
+- Skip Current Task
+- Live Pet / Task status
+- Completed / Failed / Last task statistics
+
+Pet Selection
+- Pet selector
+- Refresh Pet List
+- Farm All Equipped Pets
+- Automatically equips the selected/correct pet
+- Unequips pets that are not needed
+- Unequips task items when they are no longer needed
+
+Auto Switch
+- Off
+- Switch Fully Grown
+- Eggs Only
+- Automatically changes to a valid replacement pet when available
+
+Task Filters
+- Tasks
+  - Multi-select
+- All Tasks
+- Select All Tasks
+- Reset Task Filter
+
+Task Configuration
+- Auto Quit Work Task
+- Check Interval
+- Task Timeout
+- Failed Task Retry Delay
+- Teleport Height
+
+Built-in Task Handling
+- Mystery
+- Pet Me
+- Hungry
+- Thirsty
+- Sleepy
+- Dirty
+- Toilet
+- Sick
+- School
+- Salon
+- Pizza Party
+- Beach Party
+- Camping
+- Bored
+- Play
+- Walk
+- Ride
+- Party Zone
+- Rain Puddle
+- Snowman
+- Diving Board
+- Leaf Pile
+- At Work
+
+Task Support / Protection
+- Pet focus handling
+- Automatic pet focus release when not needed
+- Hospital sick-task handling
+- Sit To Heal support
+- Furniture interaction support
+- School food / water bowl support
+- Anti-Void
+- Automatic safe-position recovery
+
+
+==================================================
+CLIENT PETS
+==================================================
+
+CLIENT PET SPAWNER
+
+Pet Selection
+- Searchable pet selector
+- Uses Adopt Me's live InventoryDB
+- Eggs are excluded
+
+Spawn Controls
+- Quantity
+- Add To Normal Inventory View
+- Spawned Client Pets selector
+- Remove Selected Client Pet
+- Clear All Client Pets
+- Open Adopt Me Backpack
+
+Pet Appearance
+- Custom Name
+- Age
+  - Newborn
+  - Junior
+  - Pre-Teen
+  - Teen
+  - Post-Teen
+  - Full Grown
+- Neon
+- Mega Neon
+- Flyable
+- Rideable
+
+Client-Only Behavior
+- Fake pets appear in the normal Backpack view
+- Fake pets are session-only
+- Fake pets do not persist after rejoining
+- Fake pets are excluded from server equip calls
+- Fake pets are excluded from trades
+- Fake pets are excluded from pet tasks
+- Fake pets are excluded from webhook reports
+- Fake favorite changes are blocked
+- Fake lock changes are blocked
+
+
+==================================================
+3D VIEWER
+==================================================
+
+PET VIEWER
+
+Pet Selection
+- Search every released non-egg pet
+- Uses Adopt Me's live InventoryDB
+- Load / Reload Selected Pet
+
+Variants
+- Regular
+- Neon
+- Mega Neon
+
+Viewer Controls
+- Auto Rotate
+- Idle Animation
+- Zoom
+- Automatic camera fitting
+
+Rendering
+- Downloads the real Adopt Me pet model
+- Uses a local ViewportFrame / WorldModel
+- Uses Adopt Me's real idle / Journal animations
+- Manual Mega Neon color cycling
+- Mega Neon particle / beam / trail color support
+- Fully client-side preview
+- Does not add, equip, trade, or save the viewed pet
+
+
+==================================================
+BUYING
+==================================================
+
+ITEM BUYER
+
+Categories
+- Food
+- Toys
+- Gifts
+- Strollers
+- Vehicles
+- Pet Wear
+- Roleplay
+- Stickers
+- Pets / Eggs
+
+Item Selection
+- Category selector
+- Searchable item selector
+- Only currently available shop items are shown
+- Bucks Only
+- Hide Items Without Price
+- Refresh Item List
+- Selected item information
+
+Purchase Controls
+- Quantity
+  - 1
+  - 2
+  - 5
+  - 10
+  - 25
+  - 50
+  - 99
+- Buy Selected
+- Buy 1
+- Stop Auto Buy
+
+Auto Buy
+- Auto Buy Selected Item
+- Auto Buy Interval
+- Automatically retries failed purchases until disabled
+
+
+==================================================
+TELEPORTS
+==================================================
+
+QUICK TELEPORTS
+
+Locations
+- Main Map
+- Neighborhood
+- My Home
+
+Position Controls
+- Teleport Height
+- Save Current Position
+- Return To Saved Position
+- Teleport status display
+
+
+STRUCTURES / BUILDINGS
+
+Structure Selection
+- Searchable Structure selector
+- Structures detected from live map data
+- Event / newly loaded structures can appear automatically
+
+Actions
+- Teleport To Entrance
+- Enter Selected Structure
+- Refresh Structures
+
+
+PLAYERS
+
+Player Selection
+- Searchable Player selector
+- Live Adopt Me location information
+- Player location display
+
+Actions
+- Teleport To Player
+- Teleport To Nearest Player
+- Refresh Players
+
+Behavior
+- Automatically changes interiors when needed
+- Player locations refresh automatically
+- House owner detection when available
+
+
+DETECTED LOCATIONS
+
+Location Selection
+- Searchable Location selector
+- Combines live building entrances
+- Combines task hotspots
+- Combines core maps
+- Combines player locations
+
+Actions
+- Travel To Location
+- Refresh Locations
+
+Behavior
+- Uses live game data instead of only a hardcoded location list
+
+
+==================================================
+TRADERIE VALUES
+==================================================
+
+VALUE SEARCH
+
+Search Filters
+- Item Name
+- Category
+  - All
+  - Pets
+  - Pet Items
+  - Eggs
+  - Gifts
+  - Food
+  - Strollers
+  - Toys
+  - Vehicles
+  - Stickers
+  - Houses
+  - Services
+- Pet Variant
+  - Regular
+  - Regular Fly
+  - Regular Ride
+  - Regular Fly Ride
+  - Neon
+  - Neon Fly
+  - Neon Ride
+  - Neon Fly Ride
+  - Mega Neon
+  - Mega Neon Fly
+  - Mega Neon Ride
+  - Mega Neon Fly Ride
+
+Search Actions
+- Search Traderie
+- Clear Traderie Cache
+- Traderie Debug
+
+Results
+- Search results display
+- Selected Result
+- Say Selected Value
+- Copy Selected Value
+
+
+==================================================
+TRADE HELPER
+==================================================
+
+LIVE TRADE HELPER
+
+Trade Display
+- Live Adopt Me trade values
+- Good / Fair / Bad trade guidance
+- Full-size Trade Helper dashboard
+- Compact trade overlay
+- Overlay follows the active Adopt Me trade window
+
+Value Rules
+- Pets are valued
+- Eggs are valued
+- Vehicles are ignored
+- Toys are ignored
+- Gifts are ignored
+- Food is ignored
+- Strollers are ignored
+- Pet Wear is ignored
+- Stickers are ignored
+- All other non-pet / non-egg categories are ignored
+
+Settings
+- Trade Overlay
+- Fair Range
+- Update Interval
+
+Variant Support
+- Regular
+- Neon
+- Mega Neon
+- Fly
+- Ride
+- Fly Ride
+- Exact pet variant value matching
+
+
+==================================================
+AUTO TRADE
+==================================================
+
+TARGET & REQUESTS
+
+Targeting
+- Target Player
+- Target Mode
+  - Selected Player
+  - Cycle Players
+- Refresh Players
+
+Auto Trade Control
+- Auto Trade
+- Auto Send Trade Requests
+- Auto Accept Incoming
+- Decline Other Players
+- Repeat Trades
+
+Timing
+- Request Interval
+- Repeat Delay
+
+Manual Actions
+- Send Trade Request Now
+- Decline Current Trade
+
+
+CYCLE PLAYERS
+
+Cycle Behavior
+- Automatically cycles through players in the server
+- Skips blacklisted players
+- Blacklist is kept for the current server session
+
+Empty Offer Blacklist
+- If a Cycle Players target accepts with nothing offered:
+  - Decline the trade
+  - Blacklist their UserId
+  - Skip them on future Cycle Players requests
+- Clear Cycle Blacklist
+
+
+MY OFFER / TRADE UP POOL
+
+Offer Pool
+- Offer Pets / Trade Up Pool
+- Pets only
+- Eggs are excluded
+- All non-pet categories are excluded
+- Each inventory copy is listed separately
+- Searchable multi-select
+
+Offer Controls
+- Auto Add Selected Items
+- Keep Exact Selected Offer
+- Trade Up Mode
+- Maximum Offer Items
+- Sync Selected Items Now
+- Clear Offer Selection
+- Refresh Tradeable Inventory
+
+Trade Up Behavior
+- Uses selected pets as an offer pool
+- Prioritizes lower Traderie-value pets
+- Respects Maximum My Value
+- Uses configured profit / safety rules
+
+
+PROFIT & SAFETY
+
+Profit Rules
+- Trade For More Value
+- Auto Accept Safe Trades
+- Minimum Profit %
+- Minimum Profit Value
+- Minimum Their Value
+- Maximum My Value
+
+Offer Stability
+- Require Stable Offer
+- Respects Adopt Me's built-in negotiation lock
+- Respects Adopt Me's final confirmation lock
+
+Unknown / Drop Protection
+- Block Unknown Values
+- Reject If Value Drops
+- Rechecks safety when the offer changes
+- Rechecks safety again on final confirmation
+
+Their Value Rules
+- Only actual pets contribute value for Auto Trade
+- Eggs count as 0
+- Vehicles count as 0
+- Toys count as 0
+- Gifts count as 0
+- Food counts as 0
+- Strollers count as 0
+- Pet Wear counts as 0
+- Stickers count as 0
+- Every other non-pet item counts as 0
+
+Empty Offer Timeout
+- 20 second empty-offer timer
+- If they add nothing for 20 seconds:
+  - Automatically declines the trade
+- If they add an item before the timeout:
+  - Empty-offer timeout is disabled for that trade
+
+
+EXPECTED THEIR OFFER
+
+Exact Offer Protection
+- Require Exact Their Offer
+- Capture Their Current Offer
+- Clear Captured Offer
+- Captured-offer status display
+
+Exact Matching
+- Item kind
+- Item count
+- Neon
+- Mega Neon
+- Fly
+- Ride
+- Final confirmation recheck
+
+
+AUTO TRADE DEBUG
+
+Debug Controls
+- Enable Debug
+- Dump Current Trade State
+- TEST Accept Remote
+- TEST Accept Button
+- Copy Debug Log
+- Clear Debug Log
+
+Debug Output
+- Auto Trade gates
+- Remote attempts
+- Lock states
+- Server-backed offer state
+- Current Auto Trade configuration
+- Partner / target checks
+- Value / safety checks
+
+
+DISCORD WEBHOOK REPORTS
+
+Connection
+- Webhook URL
+- Webhook Display Name
+- Mention / Message
+- Allow Discord Pings
+- Enable Pet Webhook Reports
+- Send Test Report
+
+Egg Hatch Reports
+- Report Egg Hatches
+- Detects the egg and resulting pet
+- Uses the resulting pet icon
+- Hatch Detection Window
+
+Rarity Alerts
+- @everyone Hatch Rarities
+  - Common
+  - Uncommon
+  - Rare
+  - Ultra-Rare
+  - Legendary
+- Ping @everyone Hatch
+
+Pet Growth Reports
+- Report Pet Growth
+- Growth Reports
+  - Every Age Up
+  - Full Grown Only
+
+Rate Limiting
+- Minimum Send Delay
+- Queued webhook sending
+
+Report Details
+- Show Pet Icon
+- Show Player
+- Show Rarity
+- Show Neon / Mega / Fly / Ride
+- Show Age
+- Show Hatched Egg
+- Show Pet Unique ID
+- Show Server / Job ID
+- Show Session Totals
+- Show Timestamp
+
+Embed Color
+- Rarity
+- Green
+- Blue
+- Purple
+- Gold
+- Red
+
+Status
+- Webhook status display
+- Hatch count
+- Growth count
+- Sent count
+- Failed count
+- Fake client pets are ignored
+
+
+PLAYER
+
+Anti AFK
+- Anti AFK
+- Automatically prevents idle kick behavior

@@ -1,0 +1,668 @@
+
+local Library = loadstring(game:HttpGet(
+    "https://raw.githubusercontent.com/JaxRol/ZeroPoint/refs/heads/main/GUI/ZeroPoint-GUI"
+))()
+
+local Window = Library:CreateWindow({
+    Title = "ZeroPoint Showcase",
+    Footer = "ZeroPoint GUI • Feature Demonstration",
+    Icon = "sparkles",
+
+    Size = UDim2.fromOffset(760, 560),
+    Center = true,
+    AutoShow = true,
+    Resizable = true,
+
+    Glow = true,
+    GlobalSearch = true,
+
+    ToggleKeybind = Enum.KeyCode.RightControl,
+
+    ShowMobileButtons = true,
+    MobileButtonsSide = "Left",
+    MobileButtonDragging = true,
+
+    ScreenEffects = false,
+    GuiEffects = false,
+})
+
+----------------------------------------------------------------
+-- HOME
+----------------------------------------------------------------
+
+local Home = Window:AddTab({
+    Name = "Home",
+    Icon = "house",
+    Description = "ZeroPoint GUI feature showcase",
+})
+
+local Welcome = Home:AddLeftGroupbox("Welcome", "sparkles")
+
+Welcome:AddLabel(
+    "Welcome to the ZeroPoint showcase."
+)
+
+Welcome:AddLabel(
+    "This window demonstrates the main controls and systems available in the library."
+)
+
+Welcome:AddDivider()
+
+Welcome:AddButton("Show Notification", function()
+    Library:Notify({
+        Title = "ZeroPoint",
+        Description = "Notifications are working correctly.",
+        Time = 3,
+    })
+end)
+
+Welcome:AddButton("Show Success", function()
+    Library:Notify({
+        Title = "Success",
+        Description = "The showcase button was pressed.",
+        Time = 3,
+    })
+end)
+
+Welcome:AddButton("Show Warning", function()
+    Library:Notify({
+        Title = "Warning",
+        Description = "This is an example warning notification.",
+        Time = 4,
+    })
+end)
+
+local Status = Home:AddRightGroupbox("Status", "activity")
+
+Status:AddLabel("Library loaded successfully.")
+
+Status:AddToggle("ShowcaseStatus", {
+    Text = "Showcase Enabled",
+    Default = true,
+    Callback = function(Value)
+        Library:Notify({
+            Title = "Toggle Changed",
+            Description = "Showcase Enabled: " .. tostring(Value),
+            Time = 2,
+        })
+    end,
+})
+
+Status:AddToggle("DemoNotifications", {
+    Text = "Demo Notifications",
+    Default = true,
+})
+
+Status:AddSlider("DemoProgress", {
+    Text = "Demo Progress",
+    Default = 65,
+    Min = 0,
+    Max = 100,
+    Rounding = 0,
+    Suffix = "%",
+})
+
+----------------------------------------------------------------
+-- CONTROLS
+----------------------------------------------------------------
+
+local Controls = Window:AddTab({
+    Name = "Controls",
+    Icon = "sliders-horizontal",
+    Description = "Buttons, toggles, sliders, dropdowns and inputs",
+})
+
+local Basic = Controls:AddLeftGroupbox("Basic Controls", "sliders-horizontal")
+
+Basic:AddToggle("DemoToggle", {
+    Text = "Example Toggle",
+    Default = true,
+    Callback = function(Value)
+        Library:Notify({
+            Title = "Toggle",
+            Description = "Value: " .. tostring(Value),
+            Time = 2,
+        })
+    end,
+})
+
+Basic:AddSlider("DemoSlider", {
+    Text = "Example Slider",
+    Default = 50,
+    Min = 0,
+    Max = 100,
+    Rounding = 0,
+    Suffix = "%",
+    Callback = function(Value)
+        -- Demo callback
+    end,
+})
+
+Basic:AddDropdown("DemoDropdown", {
+    Text = "Example Dropdown",
+    Values = {
+        "Option One",
+        "Option Two",
+        "Option Three",
+        "Option Four",
+    },
+    Default = "Option One",
+    Searchable = true,
+    Callback = function(Value)
+        Library:Notify({
+            Title = "Dropdown",
+            Description = "Selected: " .. tostring(Value),
+            Time = 2,
+        })
+    end,
+})
+
+local InputGroup = Controls:AddRightGroupbox("Input", "keyboard")
+
+InputGroup:AddInput("DemoInput", {
+    Text = "Text Input",
+    Default = "",
+    Placeholder = "Type something...",
+    Callback = function(Value)
+        Library:Notify({
+            Title = "Input Changed",
+            Description = Value ~= "" and Value or "Input is empty.",
+            Time = 2,
+        })
+    end,
+})
+
+InputGroup:AddInput("NumericInput", {
+    Text = "Numeric Input",
+    Default = "100",
+    Numeric = true,
+    Placeholder = "Enter a number...",
+})
+
+InputGroup:AddLabel("Demo Keybind"):AddKeyPicker("DemoKeybind", {
+    Default = "F",
+    Text = "Demo Keybind",
+    Mode = "Toggle",
+    Callback = function(Value)
+        Library:Notify({
+            Title = "Keybind",
+            Description = "Keybind state: " .. tostring(Value),
+            Time = 2,
+        })
+    end,
+})
+
+----------------------------------------------------------------
+-- COLORS
+----------------------------------------------------------------
+
+local Colors = Window:AddTab({
+    Name = "Colors",
+    Icon = "palette",
+    Description = "Color picker and animated color examples",
+})
+
+local ColorGroup = Colors:AddLeftGroupbox("Color Picker", "palette")
+
+ColorGroup:AddLabel("Accent Color"):AddColorPicker("DemoColor", {
+    Default = Color3.fromRGB(255, 20, 147),
+    Title = "Demo Color",
+    Callback = function(Value)
+        Library:Notify({
+            Title = "Color Picker",
+            Description = string.format(
+                "RGB: %d, %d, %d",
+                math.floor(Value.R * 255),
+                math.floor(Value.G * 255),
+                math.floor(Value.B * 255)
+            ),
+            Time = 2,
+        })
+    end,
+})
+
+ColorGroup:AddLabel("Animated Color"):AddColorPicker("RainbowDemo", {
+    Default = Color3.fromRGB(255, 20, 147),
+    Title = "Rainbow Color",
+    Mode = "Rainbow",
+    RainbowSpeed = 0.15,
+})
+
+local ColorModes = Colors:AddRightGroupbox("Color Modes", "wand-sparkles")
+
+ColorModes:AddDropdown("ColorMode", {
+    Text = "Animation Mode",
+    Values = {
+        "Static",
+        "Rainbow",
+        "Breath",
+    },
+    Default = "Static",
+})
+
+ColorModes:AddSlider("RainbowSpeed", {
+    Text = "Animation Speed",
+    Default = 50,
+    Min = 1,
+    Max = 100,
+    Rounding = 0,
+    Suffix = "%",
+})
+
+----------------------------------------------------------------
+-- SUBPAGES
+----------------------------------------------------------------
+
+local Advanced = Window:AddTab({
+    Name = "Advanced",
+    Icon = "layers-3",
+    Description = "Subpage and dependency demonstration",
+})
+
+local MainPage = Advanced:AddSubPage({
+    Name = "Main",
+    Icon = "layout-dashboard",
+    Description = "Main advanced controls",
+})
+
+local ExtraPage = Advanced:AddSubPage({
+    Name = "Extra",
+    Icon = "package",
+    Description = "Additional controls",
+})
+
+local MainAdvanced = MainPage:AddLeftGroupbox("Advanced Controls", "settings")
+
+MainAdvanced:AddToggle("AdvancedToggle", {
+    Text = "Enable Advanced Mode",
+    Default = false,
+})
+
+local DependentToggle = MainAdvanced:AddToggle("DependencyToggle", {
+    Text = "Enable Extra Options",
+    Default = false,
+})
+
+local DependencyBox = MainAdvanced:AddDependencyBox()
+
+DependencyBox:AddSlider("DependentSlider", {
+    Text = "Dependent Slider",
+    Default = 50,
+    Min = 0,
+    Max = 100,
+    Rounding = 0,
+    Suffix = "%",
+})
+
+DependencyBox:AddDropdown("DependentDropdown", {
+    Text = "Dependent Dropdown",
+    Values = {
+        "Low",
+        "Medium",
+        "High",
+        "Extreme",
+    },
+    Default = "Medium",
+})
+
+DependencyBox:SetupDependencies({
+    {
+        DependentToggle,
+        true,
+    },
+})
+
+local ExtraGroup = ExtraPage:AddRightGroupbox("Extra Features", "box")
+
+ExtraGroup:AddButton("Extra Button", function()
+    Library:Notify({
+        Title = "Subpage",
+        Description = "You are viewing the Extra subpage.",
+        Time = 3,
+    })
+end)
+
+ExtraGroup:AddToggle("ExtraToggle", {
+    Text = "Extra Toggle",
+    Default = false,
+})
+
+----------------------------------------------------------------
+-- TABBOX
+----------------------------------------------------------------
+
+local TabboxTab = Window:AddTab({
+    Name = "Tabbox",
+    Icon = "panel-top",
+    Description = "Nested tabbox demonstration",
+})
+
+local Tabbox = TabboxTab:AddLeftTabbox("Example Tabbox")
+
+local TabOne = Tabbox:AddTab("First")
+local TabTwo = Tabbox:AddTab("Second")
+local TabThree = Tabbox:AddTab("Third")
+
+TabOne:AddToggle("TabOneToggle", {
+    Text = "First Tab Toggle",
+    Default = true,
+})
+
+TabOne:AddSlider("TabOneSlider", {
+    Text = "First Tab Slider",
+    Default = 25,
+    Min = 0,
+    Max = 100,
+    Rounding = 0,
+})
+
+TabTwo:AddDropdown("TabTwoDropdown", {
+    Text = "Second Tab Dropdown",
+    Values = {
+        "Alpha",
+        "Beta",
+        "Gamma",
+    },
+    Default = "Alpha",
+})
+
+TabTwo:AddButton("Second Tab Button", function()
+    Library:Notify({
+        Title = "Tabbox",
+        Description = "Second tab button pressed.",
+        Time = 2,
+    })
+end)
+
+TabThree:AddInput("TabThreeInput", {
+    Text = "Third Tab Input",
+    Placeholder = "Enter text...",
+})
+
+local TabboxRight = TabboxTab:AddRightTabbox("Modes")
+
+local ModeOne = TabboxRight:AddTab("Mode A")
+local ModeTwo = TabboxRight:AddTab("Mode B")
+
+ModeOne:AddLabel("This is Mode A.")
+
+ModeTwo:AddLabel("This is Mode B.")
+
+----------------------------------------------------------------
+-- NOTIFICATIONS
+----------------------------------------------------------------
+
+local Notifications = Window:AddTab({
+    Name = "Notifications",
+    Icon = "bell",
+    Description = "Notification system showcase",
+})
+
+local NotificationGroup = Notifications:AddLeftGroupbox("Notifications", "bell")
+
+NotificationGroup:AddButton("Normal Notification", function()
+    Library:Notify({
+        Title = "Normal Notification",
+        Description = "This is a standard notification.",
+        Time = 4,
+    })
+end)
+
+NotificationGroup:AddButton("Long Notification", function()
+    Library:Notify({
+        Title = "Long Notification",
+        Description = "This notification stays visible for a little longer.",
+        Time = 8,
+    })
+end)
+
+NotificationGroup:AddButton("Persistent Notification", function()
+    local Notification = Library:Notify({
+        Title = "Persistent",
+        Description = "This notification will remain until destroyed.",
+        Persist = true,
+    })
+
+    task.delay(5, function()
+        if Notification and not Notification.Destroyed then
+            Notification:Destroy()
+        end
+    end)
+end)
+
+local DialogGroup = Notifications:AddRightGroupbox("Dialogs", "message-square")
+
+DialogGroup:AddButton("Open Dialog", function()
+    Window:AddDialog("ShowcaseDialog", {
+        Title = "ZeroPoint Dialog",
+        Description = "This is an example dialog created by the library.",
+        Icon = "message-square",
+        FooterButtons = {
+            {
+                Title = "Cancel",
+                Variant = "Secondary",
+                Callback = function(Dialog)
+                    Dialog:Close()
+                end,
+            },
+            {
+                Title = "Continue",
+                Variant = "Primary",
+                Callback = function(Dialog)
+                    Dialog:Close()
+
+                    Library:Notify({
+                        Title = "Dialog",
+                        Description = "Continue was selected.",
+                        Time = 3,
+                    })
+                end,
+            },
+        },
+    })
+end)
+
+----------------------------------------------------------------
+-- VISUALS
+----------------------------------------------------------------
+
+local Visuals = Window:AddTab({
+    Name = "Visuals",
+    Icon = "sparkles",
+    Description = "ZeroPoint visual systems",
+})
+
+local Effects = Visuals:AddLeftGroupbox("Effects", "sparkles")
+
+Effects:AddToggle("ScreenEffects", {
+    Text = "Full Screen Effects",
+    Default = false,
+    Callback = function(Value)
+        Window:SetScreenEffectsEnabled(Value)
+    end,
+})
+
+Effects:AddToggle("GuiEffects", {
+    Text = "GUI Effects",
+    Default = false,
+    Callback = function(Value)
+        Window:SetGuiEffectsEnabled(Value)
+    end,
+})
+
+Effects:AddToggle("Gradient", {
+    Text = "Animated Gradient",
+    Default = false,
+    Callback = function(Value)
+        Library:SetGradientAnimation(Value)
+    end,
+})
+
+Effects:AddToggle("Glow", {
+    Text = "Window Glow",
+    Default = true,
+    Callback = function(Value)
+        Window:SetGlow(Value)
+    end,
+})
+
+Effects:AddDropdown("ScreenEffectType", {
+    Text = "Screen Effect",
+    Values = Library:GetEffectNames(),
+    Default = "Snow",
+    Searchable = true,
+    Callback = function(Value)
+        Window:SetScreenEffect(Value)
+    end,
+})
+
+Effects:AddDropdown("GuiEffectType", {
+    Text = "GUI Effect",
+    Values = Library:GetEffectNames(),
+    Default = "Snow",
+    Searchable = true,
+    Callback = function(Value)
+        Window:SetGuiEffect(Value)
+    end,
+})
+
+local EffectSettings = Visuals:AddRightGroupbox("Effect Settings", "sliders")
+
+EffectSettings:AddSlider("ScreenIntensity", {
+    Text = "Screen Intensity",
+    Default = 35,
+    Min = 0,
+    Max = 100,
+    Rounding = 0,
+    Suffix = "%",
+    Callback = function(Value)
+        Window:SetScreenEffectIntensity(Value)
+    end,
+})
+
+EffectSettings:AddSlider("ScreenSpeed", {
+    Text = "Screen Speed",
+    Default = 100,
+    Min = 10,
+    Max = 300,
+    Rounding = 0,
+    Suffix = "%",
+    Callback = function(Value)
+        Window:SetScreenEffectSpeed(Value)
+    end,
+})
+
+EffectSettings:AddSlider("GuiIntensity", {
+    Text = "GUI Intensity",
+    Default = 35,
+    Min = 0,
+    Max = 100,
+    Rounding = 0,
+    Suffix = "%",
+    Callback = function(Value)
+        Window:SetGuiEffectIntensity(Value)
+    end,
+})
+
+EffectSettings:AddSlider("GuiSpeed", {
+    Text = "GUI Speed",
+    Default = 100,
+    Min = 10,
+    Max = 300,
+    Rounding = 0,
+    Suffix = "%",
+    Callback = function(Value)
+        Window:SetGuiEffectSpeed(Value)
+    end,
+})
+
+----------------------------------------------------------------
+-- WATERMARK
+----------------------------------------------------------------
+
+local WatermarkTab = Window:AddTab({
+    Name = "Watermark",
+    Icon = "monitor",
+    Description = "Watermark system demonstration",
+})
+
+local WatermarkGroup = WatermarkTab:AddLeftGroupbox("Watermark", "monitor")
+
+local Watermark = Library:SetupWatermark({
+    ShowWatermark = true,
+    ScriptName = "ZeroPoint Showcase",
+    ShowName = true,
+    ShowFPS = true,
+    ShowPing = true,
+    BackgroundTransparency = 0.25,
+})
+
+WatermarkGroup:AddToggle("WatermarkVisible", {
+    Text = "Show Watermark",
+    Default = true,
+    Callback = function(Value)
+        Watermark:SetVisible(Value)
+    end,
+})
+
+WatermarkGroup:AddToggle("WatermarkName", {
+    Text = "Show Player Name",
+    Default = true,
+    Callback = function(Value)
+        Watermark:ShowName(Value)
+    end,
+})
+
+WatermarkGroup:AddToggle("WatermarkFPS", {
+    Text = "Show FPS",
+    Default = true,
+    Callback = function(Value)
+        Watermark:ShowFPS(Value)
+    end,
+})
+
+WatermarkGroup:AddToggle("WatermarkPing", {
+    Text = "Show Ping",
+    Default = true,
+    Callback = function(Value)
+        Watermark:ShowPing(Value)
+    end,
+})
+
+WatermarkGroup:AddInput("WatermarkNameInput", {
+    Text = "Script Name",
+    Default = "ZeroPoint Showcase",
+    Placeholder = "Watermark name...",
+    Callback = function(Value)
+        Watermark:SetScriptName(
+            Value ~= "" and Value or "ZeroPoint Showcase"
+        )
+    end,
+})
+
+----------------------------------------------------------------
+-- SETTINGS
+----------------------------------------------------------------
+
+Window:LoadSettingsTab({
+    ScriptName = "ZeroPoint Showcase",
+    Name = "Settings",
+    Icon = "settings",
+    Description = "Built-in ZeroPoint interface settings",
+    ShowWatermark = false,
+    LoadManagers = true,
+    ThemeFolder = "ZeroPoint",
+    ConfigFolder = "ZeroPoint",
+    ConfigSubFolder = "Showcase",
+})
+
+----------------------------------------------------------------
+-- STARTUP
+----------------------------------------------------------------
+
+Library:Notify({
+    Title = "ZeroPoint Showcase",
+    Description = "All showcase components have loaded.",
+    Time = 5,
+})
+
